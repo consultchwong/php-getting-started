@@ -1,0 +1,21 @@
+@charset "utf-8";
+
+#conent{ clear:both; padding:4px 0 0 0;}
+	#menu{ width:490px; float:left; position:relative; background:url(../images/contact/line.gif) no-repeat right top; padding:0 0 100px 0;}
+	#menu h1{padding:0 0 20px 0;}
+	#menu p{font-family:"新細明體",Arial, Helvetica, sans-serif; color:#5d5d5d; font-size:15px; /*font-weight:bold;*/ font-weight:normal; padding:0 0 15px 0;}
+	#menu p span{width:65px; display:inline-block; font-family:"新細明體",Arial, Helvetica, sans-serif; color:#5d5d5d; font-size:15px; /*font-weight:bold;*/ font-weight:normal; vertical-align:top;}
+	#menu p span img{border:1px solid #d3d3d3;}
+	#menu p .span2 { width:350px;}
+	#menu p .span2 span { color:#c12121; width:auto;}
+	#menu p a{color:#2f829b; text-decoration:none; font-family:Arial, Helvetica, sans-serif; font-size:15px;}
+	#menu p a:hover{color:#98b83b;}
+	
+	.con{ float:left; padding:45px 0 0 70px; width:415px;}
+	.con p{padding:0 0 9px 0;}
+	.con p span{ width:57px; display:inline-block; font-family:"新細明體",Arial, Helvetica, sans-serif; color:#5d5d5d; font-size:15px; /*font-weight:bold;*/ font-weight:normal; vertical-align:top; padding:3px 0 0 0;}
+	.con p input{ width:246px; height:21px; border:1px solid #939393; font-family:"新細明體",Arial, Helvetica, sans-serif; color:#5d5d5d; font-size:13px;}
+	.con p textarea{ width:246px; height:145px; border:1px solid #939393; font-family:"新細明體",Arial, Helvetica, sans-serif; color:#5d5d5d; font-size:13px;}
+	.con #subbtn{ padding:0 0 0 219px;}
+	.con p #Submit{width:86px; height:25px; background:url(../images/contact/submit.gif) no-repeat right top; border:0; font-family:"新細明體",Arial, Helvetica, sans-serif; color:#fff; font-size:13px; cursor:pointer;}
+	

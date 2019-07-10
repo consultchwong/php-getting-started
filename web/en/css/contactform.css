@@ -1,0 +1,28 @@
+/*
+ * Form elements
+ -----------------------*/
+ 
+fieldset,legend
+{margin:0;} 
+
+input,textarea,label,button
+{float:left;}
+
+#sendmail,button,#contact_form  
+{position:relative;}
+
+#contact_form   { top:10px; left:50px; width:561px; height:auto; float:left; padding:0 0 10px 0; }
+
+
+fieldset        {padding:10px 30px;border:1px solid #ccc;border-bottom-width:10px;}
+legend          {padding:0 0px;font-size:1.5em;font-weight:200; }
+input           {width:350px;display:block;}
+input,
+textarea        {border:1px solid #ccc;padding:5px;margin:8px 0 0 0; display:block; }
+input:focus,
+textarea:focus  {background:#ffc;}
+textarea        {font:.9em  Arial; width:350px; margin:8px 0 0 0;  }
+label           {margin:9px 0 0;font-weight:700;font-size:.9em;clear:left;width:90px; color:#f1ce78;}
+
+#response       {width:520px; height:auto; background:#ffc; padding:20px; display:none;}
+#sendmail       {width:362px; left:90px;}

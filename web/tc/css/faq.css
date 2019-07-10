@@ -1,0 +1,10 @@
+@charset "utf-8";
+
+#conent{ clear:both; padding:4px 0 0 0;}
+	.con{ padding:0 0 0 0; width:975px; background:url(../images/faq/bg.jpg) no-repeat right 125px;}
+	.con h1{padding:0 0 23px 0;}
+	.con h2{padding:0 0 11px 0; color:#69812f; /*font-weight:bold;*/ font-family:"新細明體",Arial, Helvetica, sans-serif; font-size:15px;}
+	.con h3{padding:0 0 11px 0; color:#6f8c24; /*font-weight:bold;*/ font-family:"新細明體",Arial, Helvetica, sans-serif; font-size:15px; letter-spacing:5px;}
+	.con p{padding:0 0 52px 0; width:757px; font-family:"新細明體",Arial, Helvetica, sans-serif; color:#5d5d5d; font-size:15px; /*font-weight:bold;*/ font-weight:normal; text-align:justify; line-height:23px; letter-spacing:5px;}
+	.con p#p{padding:0 0 32px 0; width:757px; font-family:"新細明體",Arial, Helvetica, sans-serif; color:#5d5d5d; font-size:15px; /*font-weight:bold;*/ font-weight:normal; text-align:justify; line-height:23px; letter-spacing:normal;}
+	

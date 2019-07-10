@@ -1,0 +1,44 @@
+@charset "utf-8";
+
+#conent{ clear:both; padding:4px 0 0 0;}
+	/*#menu{ width:220px; float:left; position:relative;}*/
+	#menu{ width:220px; background:url(../images/about/line.gif) no-repeat right top; float:left; min-height:700px; height:700px;}	
+	
+	#menu img{border:1px solid #d3d3d3;}
+	#menu p{ position:absolute; height:3px; width:3px;}
+	#menu p#tleft{ top:0; left:0; background:url(../images/top_left.png) no-repeat left top;}
+	#menu p#tright{ top:0; right:0; background:url(../images/top_right.png) no-repeat left top;}
+	#menu p#bleft{ bottom:0; left:0; background:url(../images/bottom_left.png) no-repeat left top;}
+	#menu p#bright{ bottom:0; right:0; background:url(../images/bottom_right.png) no-repeat left top;}
+
+
+	#menu ul {width:180px;}
+	#menu ul li {font-family:"新細明體",Arial, Helvetica, sans-serif; font-size:15px; color:#2f829b; margin:7px 0 7px 0;}
+	#menu ul li h1{background:url(../images/cause/title_main2.gif) no-repeat left top; height:20px; width:86px;}
+	#menu ul li.img {
+	padding-top:40px;
+	text-align: center;
+}
+	#menu ul #listtop{padding:0 0 8px 0;}
+	#menu ul #listtop:hover{ background-color:#fff;}
+	#menu ul li a{ position:relative; width:170px; height:22px; display:block; vertical-align:middle; font-family:"新細明體",Arial, Helvetica, sans-serif; color:#545454; font-size:15px; /*font-weight:bold;*/ font-weight:normal; padding:6px 0 0 35px; text-decoration:none;}
+	#menu ul li #btn1{background:url(../images/minor/btn1.gif) no-repeat 5px 4px;}
+	#menu ul li #btn1:hover{background:url(../images/minor/btn4_over.gif) no-repeat 5px 4px; color:#fff; background-color:#216a80;}
+	#menu ul li #btn2{background:url(../images/minor/btn2.gif) no-repeat 5px 4px;}
+	#menu ul li #btn2:hover{background:url(../images/minor/btn4_over.gif) no-repeat 5px 4px; color:#fff; background-color:#216a80;}
+		
+	.con{ float:left; padding:0 0 0 22px; width:735px;}
+	.con h2{height:24px; padding:0 0 17px 0;}
+	.con h3{font-family:"華康儷中黑",Arial, Helvetica, sans-serif; color:#98b83b; font-size:16px; /*font-weight:bold;*/ padding:0 0 17px 15px; background:url(../images/about/list_point.gif) no-repeat left 3px;}
+	.con p{padding:0 0 15px 0; font-family:"新細明體",Arial, Helvetica, sans-serif; color:#5d5d5d; font-size:15px; /*font-weight:bold;*/ font-weight:normal; text-align:justify; line-height:23px;}
+	
+	.con-txt { width:100%; font-family:"新細明體",Arial, Helvetica, sans-serif; color:#5d5d5d; font-size:15px; /*font-weight:bold;*/ font-weight:normal; text-align:justify; line-height:23px;}
+	
+	.con-long{ float:left; padding:0 0 0 22px; width:735px;height:1800px;}
+	.con-long h2{height:24px; padding:0 0 17px 0;}
+	.con-long h3{font-family:"華康儷中黑",Arial, Helvetica, sans-serif; color:#98b83b; font-size:16px; /*font-weight:bold;*/ padding:0 0 17px 15px; background:url(../images/about/list_point.gif) no-repeat left 3px;}
+	.con-long p{padding:0 0 15px 0; font-family:"新細明體",Arial, Helvetica, sans-serif; color:#5d5d5d; font-size:15px; /*font-weight:bold;*/ font-weight:normal; text-align:justify; line-height:23px;}
+	
+	.con-txt { width:100%; font-family:"新細明體",Arial, Helvetica, sans-serif; color:#5d5d5d; font-size:15px; /*font-weight:bold;*/ font-weight:normal; text-align:justify; line-height:23px;}
+	
+	

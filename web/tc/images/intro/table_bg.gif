@@ -1,0 +1,17 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<html>
+<!-- Mirrored from www.dev.ysd.hk:8088/surgical/tc/images/intro/table_bg.gif by HTTrack Website Copier/3.x [XR&CO'2008], Mon, 08 Nov 2010 07:54:20 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=iso-8859-1"><!-- /Added by HTTrack -->
+<head>
+<title>416 Requested Range Not Satisfiable</title>
+</head><body>
+<h1>Requested Range Not Satisfiable</h1>
+<p>None of the range-specifier values in the Range
+request-header field overlap the current extent
+of the selected resource.</p>
+<hr>
+<address>Apache/2.2.3 (Debian) DAV/2 SVN/1.4.2 mod_python/3.2.10 Python/2.4.4 PHP/5.2.0-8+etch13 mod_ssl/2.2.3 OpenSSL/0.9.8c mod_wsgi/2.3 mod_perl/2.0.2 Perl/v5.8.8 Server at www.dev.ysd.hk Port 8088</address>
+</body>
+<!-- Mirrored from www.dev.ysd.hk:8088/surgical/tc/images/intro/table_bg.gif by HTTrack Website Copier/3.x [XR&CO'2008], Mon, 08 Nov 2010 07:54:20 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=iso-8859-1"><!-- /Added by HTTrack -->
+</html>

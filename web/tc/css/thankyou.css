@@ -1,0 +1,5 @@
+@charset "utf-8";
+
+#conent{ clear:both; padding:4px 0 0 0;}
+	.con{ float:left; padding:0; width:975px;}
+	.con p{padding:100px 0 200px 0; font-family:"新細明體",Arial, Helvetica, sans-serif; color:#5d5d5d; font-size:15px; text-align:center;}	

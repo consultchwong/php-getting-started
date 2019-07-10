@@ -1,0 +1,31 @@
+@charset "utf-8";
+
+#conent{ clear:both;}
+	#menu{ width:216px; background:url(../images/about/line.gif) no-repeat right top; float:left;}
+	#menu ul li {font-family:"新細明體",Arial, Helvetica, sans-serif; font-size:15px; color:#2f829b; padding:0 0 18px 0;}
+	#menu ul li h1{background:url(../images/about/title_main.gif) no-repeat left top; /*text-indent:-99999px;*/ height:24px;}
+	#menu ul #listtop{padding:0 0 8px 0;}
+	#menu ul li div{ position:relative; border:1px solid #d3d3d3; width:160px;}
+	#menu ul li div p{ position:absolute; height:3px; width:3px;}
+	#menu ul li div p#tleft{ top:-1px; left:-1px; background:url(../images/top_left.png) no-repeat left top;}
+	#menu ul li div p#tright{ top:-1px; right:-1px; background:url(../images/top_right.png) no-repeat left top;}
+	#menu ul li div p#bleft{ bottom:-1px; left:-1px; background:url(../images/bottom_left.png) no-repeat left top;}
+	#menu ul li div p#bright{ bottom:-1px; right:-1px; background:url(../images/bottom_right.png) no-repeat left top;}
+	
+	.con{ float:left; padding:0 0 0 26px; width:738px; width:335px;}
+	#con2{ float:left; padding:0 0 0 66px;}
+	
+	.con h2{height:24px; padding:0 0 10px 0;}
+	.con p{padding:0 0 27px 0; font-family:"新細明體",Arial, Helvetica, sans-serif; color:#5d5d5d; font-size:15px; /*font-weight:bold;*/ font-weight:normal; text-align:justify; line-height:23px;}
+	.con p a{color:#2f829b; text-decoration:none; font-family:Arial, Helvetica, sans-serif; font-size:15px;}
+	.con p a:hover{color:#5d5d5d;}
+	.con .ep{ width:334px}
+	.con div{position:relative; border:1px solid #d3d3d3; width:327px; margin:0 0 26px 0;}
+	.con div p{ position:absolute; height:3px; width:3px; padding:0; margin:0;}
+	.con div p#tleft{ top:-1px; left:-1px; background:url(../images/top_left.png) no-repeat left top;}
+	.con div p#tright{ top:-1px; right:-1px; background:url(../images/top_right.png) no-repeat left top;}
+	.con div p#bleft{ bottom:-1px; left:-1px; background:url(../images/bottom_left.png) no-repeat left top;}
+	.con div p#bright{ bottom:-1px; right:-1px; background:url(../images/bottom_right.png) no-repeat left top;}
+	.con ul{width:301px;}
+	.con ul li{padding:0 0 29px 17px; font-family:"新細明體",Arial, Helvetica, sans-serif; color:#5d5d5d; font-size:15px; /*font-weight:bold;*/ font-weight:normal; text-align:justify; background:url(../images/about/list_point.gif) no-repeat left 3px; line-height:23px;}
+	
