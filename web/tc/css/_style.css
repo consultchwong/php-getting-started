@@ -71,3 +71,30 @@ body{ width:100%; }
 	.ysd{ float:right; margin:0; padding:0; padding-right:0px;}
 	
 .clear{clear:both; }
+
+.tabNumber { left: 40px; right: 40px; text-align: center; padding-bottom: 20px}
+.tabNumber ul { margin: 0 auto; max-width: 600px; }
+.tabNumber li { display: inline-block; margin: 0 2px; }
+.tabNumber li a { display: table-cell; vertical-align: middle; text-align: center; width: 35px; height: 35px; background: #4094DC; color: #FFFFFF; -webkit-transition: all 0.3s ease-out; -moz-transition: all 0.5s ease-out; -ms-transition: all 0.5s ease-out; -o-transition: all 0.5s ease-out; transition: all 0.5s ease-out; }
+.tabNumber li a:hover { background: #3274ad; }
+.tabNumber li a.currently { background: #9da719; }
+
+
+.dropdown {
+  position: relative;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 100px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  top: 30px;
+  left: 700px;
+  z-index: 1;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}

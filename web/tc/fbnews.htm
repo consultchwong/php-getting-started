@@ -19,6 +19,8 @@
 <link rel="stylesheet" type="text/css" href="css/_style.css"/>
 <link rel="stylesheet" type="text/css" href="css/faq.css"/>
 <script type="text/javascript" src="js/glo.js"></script>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+
 </head>
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-136774179-1"></script>
@@ -29,7 +31,106 @@
 
   gtag('config', 'UA-136774179-1');
 </script>
+<script>
 
+var g_page = 1;
+
+function linkify(text) {
+    var urlRegex =/(\b(https?|ftp|file):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/ig;
+    return text.replace(urlRegex, function(url) {
+        return '<a href="' + url + '">' + '按此連結' + '</a>';
+    });
+}
+function loadDoc(page) {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+	 var fbdata = JSON.parse(this.responseText); 
+	 const posts_per_page = 3;
+	 fbdata_slice = fbdata.data.slice((page - 1) * posts_per_page + 0, (page - 1) * posts_per_page + posts_per_page)
+     console.log(fbdata.data);
+	 
+	 g_page = page;
+	 
+	 for (var i=1;i<=10;i++)
+	 {
+		var paging_head_pp = document.getElementById("paging_head_p" + i.toString());
+		var paging_foot_pp = document.getElementById("paging_foot_p" + i.toString());
+		paging_head_pp.classList.remove(paging_head_pp.classList.item(0));
+		paging_foot_pp.classList.remove(paging_foot_pp.classList.item(0));
+	 }
+	 var paging_head_p = document.getElementById("paging_head_p" + page.toString());
+	 paging_head_p.classList.add("currently");
+	 var paging_foot_p = document.getElementById("paging_foot_p" + page.toString());
+	 paging_foot_p.classList.add("currently");
+	 
+	 var bcontent = document.getElementById("conent");
+	 bcontent.style.display = "none";
+
+	 $('.fbmsg').remove();
+     fbdata_slice.map(function (item){ 
+        var id = (item.id) ? item.id : "";
+        var message = (item.message) ? item.message : "";
+        var updated_time = (item.updated_time) ? item.updated_time : "";
+        var image_src = "";
+        var image_width = "";
+        var image_height = "";
+        var image_desc = "";
+          console.log("item", item);
+        if (item.hasOwnProperty("attachments"))
+        {
+          image_src = item["attachments"]["data"][0]["media"]["image"]["src"];
+          console.log("image_src", image_src);
+          full_pic_src = item["full_picture"];
+          console.log("full_pic_src", full_pic_src);
+          image_width = item["attachments"]["data"][0]["media"]["image"]["width"];
+          console.log("image_width", image_width);
+          image_height = item["attachments"]["data"][0]["media"]["image"]["height"];
+          console.log("image_height", image_height);
+          image_desc = item["attachments"]["data"][0]["description"];
+          console.log("image_desc", image_desc);
+        }
+
+
+		
+		var div_msg = document.createElement('div');
+		var div_p = document.createElement('p');
+		div_p.innerHTML = linkify(message);
+		div_msg.appendChild(div_p);
+		console.log(bcontent.style);
+		div_msg.classList.add("fbmsg");
+		div_msg.style.display = "block";
+		div_msg.style.marginBottom = "20px";
+		div_msg.style.padding = "16px";
+		div_msg.id = item["id"];
+//		bcontent.appendChild(div_msg);
+
+bcontent.insertBefore(div_msg, bcontent.childNodes[bcontent.childNodes.length - 2]);  // Insert <li> before the first child of <ul>
+		
+		var div_img = document.createElement('img');
+		div_img.src = full_pic_src;
+		div_img.style.paddingTop = "20px";
+		div_img.width = 590;
+		div_msg.appendChild(div_img);
+		
+	 });
+	 bcontent.style.display = "block";
+	 bcontent.style.top = "-191px";
+    }
+  };
+  xhttp.open("GET", "https://5676258754024356.cn-hongkong.fc.aliyuncs.com/2016-08-15/proxy/FBConn/fbfunc/getfbdata2", true);
+  xhttp.send();
+}
+
+/*
+jQuery(document).ready(function ($) {
+    $("#bottomcontent .fbmsg").lazy({
+            appendScroll: $('#bottomcontent')
+        }
+        );
+});
+*/  
+</script>
 <body><div id="warpper">
 <div id="top">
 	<div id="infobar">
@@ -47,61 +148,68 @@
 	</div>
     <div id="banner"><p id="tleft"></p><p id="tright"></p><p id="bleft"></p><p id="bright"></p><img src="images/faq/banner.jpg" alt="割包皮手術圖片"/></div>
     <div id="topmenu"><p id="tleft"></p><p id="tright"></p><p id="bleft"></p><p id="bright"></p>
-	<div><a href="index.htm" title="關於我們"  >關於我們</a></div>
+	<div><a href="index.htm" title="關於我們">關於我們</a></div>
 	<div><a href="cause.htm" title="割包皮原因">割包皮原因</a></div>
 	<div><a href="intro.htm" title="割包皮介紹">割包皮介紹</a></div>
 	<div><a href="minor.htm" title="其他手術">其他手術</a></div>
 	<div><a href="contact.htm" title="聯絡我們">聯絡我們</a></div>
 	<div class="dropdown">
-		<a href="fbnews.htm" title="最新消息" >最新消息</a>
+		<a href="fbnews.htm" title="最新消息" class=" currp" >最新消息</a>
 		<div class="dropdown-content"><a href="ref.htm">參考資料</a></div>
 	</div>
-	<div><a href="faq.htm" title="常見問題" class=" currp">常見問題</a></div>
+	<div><a href="faq.htm" title="常見問題" >常見問題</a></div>
 	</div>
 	</div>
 <div id="conent">
-    <div id="con" class="con"><h1 title="常見問題"><img src="images/faq/title_01.gif" alt="割包皮常見誤解"/></h1>
-      <p id="p">部份小童及男仕有局部陰莖陷入，患者的陰莖外觀較短小且尖，無法翻出包皮令龜頭外露，與包皮過長情況相似，容易被誤診而去割包皮。</p>
-      <h2><img src="images/faq/title_02.gif" alt="割包常見皮問題"/></h2>
-      <h3>問:何時該接受手術？</h3>
-      <p>答:多數是兒童，但成年男仕因包皮頻密發炎, 又或因包皮過長過窄影響生活而接受手術也越來越多。</p>
-      <h3>問:割包皮的原因是甚麼？</h3>
-      <p>答:包皮囊炎、包皮過長或過窄，令龜頭無法整個露出。</p>
-      <h3>問:手術後復原時間需要多久？</h3>
-      <p>答:一般，一兩天即可上班上學；至於劇烈運動如足球藍球等，建議四星期後才進行。</p>
-      
-            <h3>問:真的需要割包皮嗎?</h3>
-      <p>答:父母聽到小朋友要做手術都十分擔心，其實割包皮是有適應症的，包括：</p>
-          <p>一、包莖，包皮口狹小影響排尿，導致反復包皮炎甚至泌尿系感染；</p>
-          <p>二、包皮過長，陰莖頭無法顯露，容易引致發炎。</p>
-      
-            <h3>問:要全身麻醉嗎?</h3>
-      <p>答:父母一聽到小朋友要全身麻醉, 便很擔心。其實, 以現時的醫療技術, 是有選擇的, 可以選擇局部麻醉。小朋友手術前飲小量藥水, 讓他小睡一會, 再於局部點注小量麻醉藥, 便可進行手術。</p>
-      
-            <h3>問:會痛嗎?</h3>
-      <p>答:以我們多年的手術經驗來說，使用長效麻醉及藥物，割包皮手術無論是手術中 或手術後，都可把痛楚降到很低很細微，幾乎無痛。</p>
-      
-            <h3>問:包皮手術後如果勃起的話, 會否影響傷口?</h3>
-      <p>答:不限成年男仕, 十多歲的小朋友, 如有這問題出現, 醫生會事先提供藥物冷凍啫哩帶回家, 在需要時塗於表面, 降低生理反應, 令傷口癒合順利。但相關藥物會有額外費用。</p>
-      
-      
-<h3>問:包皮環切術有什麼風險?</h3>
-      <p>答:1) 一些小男孩可能會出現流血或感染，或者跟褲子或尿布的摩擦可能會出現刺激。2) 手術後水腫，這可能是手術阻斷了淺層靜脈血管，導致水腫出現。</p>
+				<div id="news_content">
+				<h1>最新資訊</h1><br/>
+					<div class="tabNumber">
+					<ul id="paging_head">
+					<li><a id="paging_head_left" onclick="javascript:loadDoc((g_page-1) <= 0 ? 1 : (g_page-1) );" style="cursor: pointer" title="prev"><</a></li>
+					<li><a id="paging_head_p1" onclick="javascript:loadDoc(1);" style="cursor: pointer" title="page 1">1</a></li>
+					<li><a id="paging_head_p2" onclick="javascript:loadDoc(2);" style="cursor: pointer" title="page 2">2</a></li>
+					<li><a id="paging_head_p3" onclick="javascript:loadDoc(3);" style="cursor: pointer" title="page 3">3</a></li>
+					<li><a id="paging_head_p4" onclick="javascript:loadDoc(4);" style="cursor: pointer" title="page 4">4</a></li>
+					<li><a id="paging_head_p5" onclick="javascript:loadDoc(5);" style="cursor: pointer" title="page 5">5</a></li>
+					<li><a id="paging_head_p6" onclick="javascript:loadDoc(6);" style="cursor: pointer" title="page 6">6</a></li>
+					<li><a id="paging_head_p7" onclick="javascript:loadDoc(7);" style="cursor: pointer" title="page 7">7</a></li>
+					<li><a id="paging_head_p8" onclick="javascript:loadDoc(8);" style="cursor: pointer" title="page 8">8</a></li>
+					<li><a id="paging_head_p9" onclick="javascript:loadDoc(9);" style="cursor: pointer" title="page 9">9</a></li>
+					<li><a id="paging_head_p10" onclick="javascript:loadDoc(10);" style="cursor: pointer" title="page 10">10</a></li>
+					<li><a id="paging_head_left" onclick="javascript:loadDoc((g_page+1) >= 10 ? 10 : (g_page+1));" style="cursor: pointer" title="next page">></a></li>
+					</ul>
+					</div>
+					
+				</div>
+
       
       
       
       
       
+				<div id="news_content_footer">
+					<div class="tabNumber">
+					<ul id="paging_foot">
+					<li><a id="paging_head_left" onclick="javascript:loadDoc((g_page-1) <= 0 ? 1 : (g_page-1) );" style="cursor: pointer" title="prev"><</a></li>
+					<li><a id="paging_foot_p1" onclick="javascript:loadDoc(1);" style="cursor: pointer" title="page 1">1</a></li>
+					<li><a id="paging_foot_p2" onclick="javascript:loadDoc(2);" style="cursor: pointer" title="page 2">2</a></li>
+					<li><a id="paging_foot_p3" onclick="javascript:loadDoc(3);" style="cursor: pointer" title="page 3">3</a></li>
+					<li><a id="paging_foot_p4" onclick="javascript:loadDoc(4);" style="cursor: pointer" title="page 4">4</a></li>
+					<li><a id="paging_foot_p5" onclick="javascript:loadDoc(5);" style="cursor: pointer" title="page 5">5</a></li>
+					<li><a id="paging_foot_p6" onclick="javascript:loadDoc(6);" style="cursor: pointer" title="page 6">6</a></li>
+					<li><a id="paging_foot_p7" onclick="javascript:loadDoc(7);" style="cursor: pointer" title="page 7">7</a></li>
+					<li><a id="paging_foot_p8" onclick="javascript:loadDoc(8);" style="cursor: pointer" title="page 8">8</a></li>
+					<li><a id="paging_foot_p9" onclick="javascript:loadDoc(9);" style="cursor: pointer" title="page 9">9</a></li>
+					<li><a id="paging_foot_p10" onclick="javascript:loadDoc(10);" style="cursor: pointer" title="page 10">10</a></li>
+					<li><a id="paging_head_left" onclick="javascript:loadDoc((g_page+1) >= 10 ? 10 : (g_page+1));" style="cursor: pointer" title="next page">></a></li>
+					</ul>
+					</div>
+				</div>      
       
       
       
       
       
-      
-      
-      <h3>問:不割包皮有沒有危害性？</h3>
-      <p>答:因小便會積在包皮囊，引致發炎及龜頭紅腫，嚴重者更會引致包皮壞死，令陰莖組織也受影響。</p>
-    </div>
 </div>
 <div id="bottommenu">
  <p>&nbsp;</p>
@@ -202,5 +310,15 @@
   ga('create', 'UA-70704544-7', 'auto');
   ga('send', 'pageview');
 
-</script></body>
+</script>
+<script async type="text/javascript">
+document.documentElement.style.overflowX = "hidden";
+
+var show_page = location.search.split('show_page=')[1]
+console.log("show_page", show_page);
+if (!show_page) show_page = 1;
+loadDoc(show_page);
+</script>
+
+</body>
 </html>
