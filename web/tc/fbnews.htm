@@ -79,16 +79,20 @@ function loadDoc(page) {
           console.log("item", item);
         if (item.hasOwnProperty("attachments"))
         {
-          image_src = item["attachments"]["data"][0]["media"]["image"]["src"];
-          console.log("image_src", image_src);
-          full_pic_src = item["full_picture"];
-          console.log("full_pic_src", full_pic_src);
-          image_width = item["attachments"]["data"][0]["media"]["image"]["width"];
-          console.log("image_width", image_width);
-          image_height = item["attachments"]["data"][0]["media"]["image"]["height"];
-          console.log("image_height", image_height);
-          image_desc = item["attachments"]["data"][0]["description"];
-          console.log("image_desc", image_desc);
+          if (item["attachments"]["data"][0].hasOwnProperty("media"))
+		  {
+			  image_src = item["attachments"]["data"][0]["media"]["image"]["src"];
+			  console.log("image_src", image_src);
+			  full_pic_src = item["full_picture"];
+			  console.log("full_pic_src", full_pic_src);
+			  image_width = item["attachments"]["data"][0]["media"]["image"]["width"];
+			  console.log("image_width", image_width);
+			  image_height = item["attachments"]["data"][0]["media"]["image"]["height"];
+			  console.log("image_height", image_height);
+			  image_desc = item["attachments"]["data"][0]["description"];
+			  console.log("image_desc", image_desc);
+		  }
+		  
         }
 
 
